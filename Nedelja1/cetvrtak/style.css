@@ -1,0 +1,25 @@
+body {
+    background-image: url("img2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+h1 {
+    color: darkslategrey;
+    text-align: center;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.nav {   
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px;
+  }
