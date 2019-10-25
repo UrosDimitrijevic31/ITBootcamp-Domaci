@@ -16,10 +16,66 @@ table, th, td {
     text-align: center;
     margin: 0;
     padding: 0;
-  }
+}
   
-  .nav li {
+.nav li {
     display: inline-block;
     font-size: 20px;
     padding: 20px;
-  }
+}
+  /* stilizovanje tekstualnih polkja*/
+input[type=text], input[type=password] {
+  width: 200px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+/* stilizovanje submit polja*/
+input[type=submit] {
+background-color: #4CAF50;
+color: white;
+padding: 12px 30px;
+margin-top: 10px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+float: right;
+}
+
+input[type=submit]:hover {
+background-color: #45a049;
+}
+
+.input {
+float: left;
+width: 100px;
+margin-top: 6px;
+}
+
+label {
+padding: 12px 12px 12px 0;
+display: inline-block;
+}
+
+.label {
+float: left;
+width: 100px;
+margin-top: 6px;
+}
+
+.container {
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 5px;
+width: 350px;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}

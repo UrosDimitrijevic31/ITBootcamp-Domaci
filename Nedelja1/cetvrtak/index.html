@@ -22,15 +22,70 @@
         </nav>
     </header>
     <main>
-            <form action="index.html" method="post">
-                <div><label for="name">Name</label><input type="text" name="First Name" placeholder="First nam.."/></div>
-                <div><label for="name1">Last Name</label><input type="text" name="Last Name" placeholder="Last nam.."/></div>
-                <div><label for="username">Username</label><input type="text" name="Username" placeholder="Username.."/></div>
-                <div><label for="email">Email</label><input type="text" name="Email"  placeholder="Email.."/></div>
-                <div><label for="pass">Password</label><input type="password" name="Password" placeholder="Password.."/></div>
-                <div><label for="pass">Confirm Password</label><input type="password" name="Password" placeholder="Confirm Password.."/></div>
-                <input type="submit" value="Register" />
-            </form>      
+        <div class="container">
+        <form action="index.html" method="POST">
+
+        <div class="row">
+          <div class="label">
+            <label for="fname">First Name:</label>
+          </div>
+          <div class="input">
+            <input type="text" name="firstname" placeholder="Your name..">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">
+            <label for="lname">Last Name:</label>
+          </div>
+          <div class="input">
+            <input type="text" name="lastname" placeholder="Your last name..">
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="label">
+              <label for="uname">Username:</label>
+            </div>
+            <div class="input">
+              <input type="text" name="username" placeholder="Your Username..">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="label">
+              <label for="email">Email:</label>
+            </div>
+            <div class="input">
+              <input type="text" name="email" placeholder="Your email..">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="label">
+              <label for="pass">Password:</label>
+            </div>
+            <div class="input">
+              <input type="text" name="password" placeholder="Password..">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="label">
+              <label for="confpass">Confirm Password:</label>
+            </div>
+            <div class="input">
+              <input type="password" name="conirfmpassword" placeholder="Confirm Password..">
+            </div>
+          </div>
+
+        <div class="row">
+          <input type="submit" value="Submit">
+        </div>
+        
+        </form>
+      </div>
+            
         <h2>Automobili</h2>
 
             <table>
@@ -84,12 +139,33 @@
                     <td>2007</td>
                 </tr>
             </table>
+            <div class="container">
+                <form action="index.html" method="POST">
+                     <div class="row">
+                        <div class="label">
+                            <label for="username">Username:</label>
+                        </div>
+                        <div class="input">
+                            <input type="text" name="username" placeholder="Your Username is..">
+                        </div>
+                     </div>
         
-        <form action="index.html" method="post">
-            <div><label for="username">Username</label><input type="text" name="userName" placeholder="Username.." /></div>
-            <div><label for="password">Password</label><input type="password" name="password" placeholder="Password.."/></div>
-            <input type="submit" value="Log in" />
-        </form>
+                    <div class="row">
+                        <div class="label">
+                            <label for="confpass">Confirm Password:</label>
+                        </div>
+                        <div class="input">
+                            <input type="password" name="password" placeholder="Your Password is..">
+                        </div>
+                  </div>
+        
+                <div class="row">
+                  <input type="submit" value="LogIn">
+                </div>
+                
+                </form>
+              </div>
+        
     </main>
     <footer>
         <p>&copy; Uros Dimitrijevic 2019</p>
