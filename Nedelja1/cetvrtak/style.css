@@ -1,35 +1,75 @@
 body {
-    background-image: url("img2.jpg");
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-  }
-h1 {
-    color: darkslategrey;
-    text-align: center;
+  margin: 0;
+  background-image: url("img2.jpg");
 }
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
+
+#prvi {           
+  width: 30%;;
+  height: 400px;
+  margin: 10px;
+  margin-left: 50px;
+  display: inline;
+  float: left;
 }
-.nav {   
-    list-style-type: none;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
+
+#drugi {
   
-.nav li {
-    display: inline-block;
-    font-size: 20px;
-    padding: 20px;
+  width: 30%;
+  height: 400px;
+  margin: 10px;
+  display: inline;
+  float: left;
 }
-  /* stilizovanje tekstualnih polkja*/
+
+#treci {
+  width: 30%;
+  height: 400px;
+  margin: 10px;
+  display: inline;
+  float: left;
+}
+
+label {
+  display: block;
+  float: left;
+  width: 150px;
+  text-align: right;
+  font-weight: bold;
+  margin-right: 10px;
+  
+}
+.submit {
+  margin-left: 160px;
+}
+
+h1 {
+  color: darkslategrey;
+  text-align: center;
+  font-size: 60px;
+}
+
+th, td {
+  border: 1px solid black;
+  font-size: 20px;    
+}
+
+table {
+  border-collapse: collapse; 
+  margin:15%;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+#tabela tr:hover {
+  background-color: #ddd;
+}
+
 input[type=text], input[type=password] {
-  width: 200px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
+width: 200px;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+resize: vertical;
 }
 
 /* stilizovanje submit polja*/
@@ -37,45 +77,37 @@ input[type=submit] {
 background-color: #4CAF50;
 color: white;
 padding: 12px 30px;
-margin-top: 10px;
+margin-left: 160px;
+margin-top: 20px;
 border: none;
 border-radius: 4px;
 cursor: pointer;
-float: right;
+}
+div.input{
+  margin: 5px;
 }
 
-input[type=submit]:hover {
-background-color: #45a049;
+.nav {   
+list-style-type: none;
+text-align: center;
+margin: 0;
+padding: 0;
 }
 
-.input {
-float: left;
-width: 100px;
-margin-top: 6px;
-}
-
-label {
-padding: 12px 12px 12px 0;
+.nav li {
 display: inline-block;
+font-size: 20px;
+padding: 20px;
+margin-left: 40px;
 }
 
-.label {
-float: left;
-width: 100px;
-margin-top: 6px;
-}
-
-.container {
-border-radius: 5px;
-background-color: #f2f2f2;
-padding: 5px;
-width: 350px;
-
-}
-
-/* Clear floats after the columns */
-.row:after {
-content: "";
-display: table;
-clear: both;
+footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color:darkslategrey;;  
+height: 80px;
+padding-left: 60px;
+color: white;
 }
