@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  background-image: url("img2.jpg");
+}
+img {
+  opacity: 0.5;
+}
+#prvi {           
+  width: 30%;;
+  height: 400px;
+  margin: 10px;
+  margin-left: 50px;
+  display: inline;
+  float: left;
+}
+
+#drugi {
+  
+  width: 30%;
+  height: 400px;
+  margin: 10px;
+  display: inline;
+  float: left;
+}
+
+#treci {
+  width: 30%;
+  height: 400px;
+  margin: 10px;
+  display: inline;
+  float: left;
+}
+
+label {
+  display: block;
+  float: left;
+  width: 150px;
+  text-align: right;
+  font-weight: bold;
+  margin-right: 10px;
+  
+}
+.submit {
+  margin-left: 160px;
+}
+
+h1 {
+  color: darkslategrey;
+  text-align: center;
+  font-size: 60px;
+}
+
+th, td {
+  border: 1px solid black;
+  font-size: 20px;    
+}
+
+table {
+  border-collapse: collapse; 
+  margin:15%;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+#tabela tr:hover {
+  background-color: #ddd;
+}
+
+input[type=text], input[type=password] {
+  width: 200px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+/* stilizovanje submit polja*/
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 30px;
+  margin-left: 160px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+div.input{
+  margin: 5px;
+}
+
+.nav {   
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.nav li a {
+  color: darkslategrey;
+  text-decoration: none;
+}
+.nav li a:hover {
+  color: white;
+  text-decoration: none;
+}
+.nav li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+  margin-left: 40px;
+  
+}
+
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:darkslategrey;
+  height: 80px;
+  padding-left: 60px;
+  color: white;
+}
+footer p {
+  padding-top: 25px;
+}
+
+#dodatDiv {
+  width: 50%;;
+  margin-top: 10px;
+  margin-left: 5%;
+  margin-bottom: 50px;
+  font-size: 21px;
+  display: block;
+  clear: both;
+
