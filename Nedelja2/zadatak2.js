@@ -5,7 +5,7 @@
 Помоћу JavaScript-a убацити innerHTML за њега (Параграф са произвољним текстом)*/ 
 
 var wtd = 'Welcome to DOM';
-document.getElementById('title').innerHTML = wtd;
+document.getElementById('header').innerHTML = wtd;
 
 document.getElementById('dodatDiv').innerHTML = `<h2>TESLA S P90D model</h2><p>Tesla Motors potrudio se da poboljša več odličan i brz model SP85D,
 pa je tako predstavio S P90D model. Taman kada smo pomislili da je Tesla ponudio najbolji model koji je izašao iz ove
