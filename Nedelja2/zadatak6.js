@@ -6,9 +6,18 @@ Buzz ако је број дељив само са 5
 Број ако није дељив ни са 3 ни са 5
 (1,2,Fizz,4,Buzz,...) */
 
+let str ='';
 for(var a=0;a<=100;a++) {    
-    if((a % 3 ==0) && (a % 5 == 0)) {console.log(`FizzBuzz`);}
-    if((a % 3 == 0) && (a % 5 != 0)) {console.log(`Fizz`);}
-    if((a % 3 != 0) && (a % 5 == 0)) {console.log(`Buzz`);}
-    if((a % 3 != 0) && (a % 5 != 0)) {console.log(a);}
+    if(a % 3 == 0) {
+        str += `Fizz`;
+        console.log(str);
+    }
+    if(a % 5 == 0) {
+        str += 'Buzz';
+        console.log(str);
+    }  
+    else {
+        console.log(a);
+    }
+    str = '';
 }
