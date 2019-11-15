@@ -46,9 +46,6 @@ ispisRecepta(recept);
 /*2. zadatak
 Направити функцију која прима низ горе направљених објеката и исписује оне рецепте који су 
 Почетни или Лаки (не исписује остале)*/
-/*  <ime-recepta>
-    Тежина: <Лаки || Почетни>
-    Састојци: [<...>,...]*/
 
 function tezina(objekat){
     console.log('ispis samo onih recepata koji su po tezini u kategoriji: "lak" ili "pocetni"')
@@ -63,3 +60,45 @@ function tezina(objekat){
 } 
 
 tezina(recept);
+
+/* 3. zadatak
+Направити објекат састојак који садржи следеће информације: (Направити макар 5)
+
+Име састојка
+Количина
+Цена
+sastojak1 = {
+    ...
+}
+
+sastojak2 = {
+    ...
+}*/
+
+let sastojak1 = {
+    ime: 'jaja',
+    kolicina: 25,
+    cena: 14
+}
+let sastojak2 = {
+    ime: 'secer',
+    kolicina: 3, //misli se na kg
+    cena: 86     //cena po kg
+}
+let sastojak3 = {
+    ime: 'brasno',
+    kolicina: 2, //misli se na kg
+    cena: 76     //cena po kg
+}
+let sastojak4 = {
+    ime: 'mleko',
+    kolicina: 4, // misli se na litre
+    cena: 126    //cena po litru
+}
+let sastojak5 = {
+    ime: 'ulje',
+    kolicina: 1, //misli se na litre
+    cena: 115    //cena po litru
+}
+
+
