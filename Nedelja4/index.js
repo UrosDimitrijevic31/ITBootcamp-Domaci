@@ -3,10 +3,12 @@ const addTaskButton = document.querySelector('#btn-add'); //dugme za submit,
 //console.log(addTaskButton); prikaze ceo element iz html-a 
 const taskListContainer = document.querySelector('#tasks-container'); //dodavanje taska, ceo div
 const removeSelected = document.querySelector('#remv-sel'); //dugme da se obrise sve selektovano
+const selectInverted = document.querySelector('#sel-invert');
 
 addTaskButton.addEventListener('click', btnAddClick); //doda se Event za submit dugme
 textBoxTitle.addEventListener('keyup', txtKeyUp);     //doda se Evenet za momenat kad se upisuje poruka
 removeSelected.addEventListener('click', remove); 
+selectInverted.addEventListener('click', inverted);
 
 //sta se desi kad se klikne submit dugme, funkcija se pozove u Eventu-u
 function btnAddClick() {
@@ -93,5 +95,18 @@ function remove(){
             element.parentElement.parentElement.remove();
         }
     })
-   
 }
+
+function inverted(){
+    const chkBox = document.querySelectorAll('.chk-state');
+    chkBox.forEach(element =>{
+        if(element.checked) {
+            element.checked = false; 
+        }
+        else {
+            element.checked = true;
+        }
+    })
+}
+
+
