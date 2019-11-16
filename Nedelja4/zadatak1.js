@@ -14,25 +14,22 @@ let recept = [
     {
         ime: 'Palacinke',
         tezina: 'lak',
-        sastojci: ['3 veća jajeta', '250 ml mleka', '125 gr brašna', 'prstohvat soli']  
+        sastojci: ['3 jajeta', '250 ml mleka', '125 gr brašna']  
     },
     {
-        ime: 'Sladoled',
+        ime: 'Coko mus',
         tezina: 'pocetni',
-        sastojci: ['500 ml slatke pavlake', '400 gr kondenzovanog mleka','250 gr tečnog eurokrema','100 gr neslanog kikirikija']
+        sastojci: ['2 zrela avokada','100 gr meda','40 gr kakao praha','60 ml kokosovog mleka']
     },
     {
-        ime: 'Krempita',
+        ime: 'Slatki zalogaji',
         tezina: 'tezak',
-        sastojci: ['2 jajeta', '2 kašike vrele vode', '100 gr šećera', '100 gr brašna', '25 gr gustina',
-        '1 kašičica praška za pecivo', '50 gr margarina', '7 jaja', '7 dl mleka', '1 litar vode', '1 puding od vanile',
-        '50 gr gustina', '3 pune kašike brašna', '15 kašike šećera', '3-4 vanilin šećera'] 
+        sastojci: ['120 gr putera od kikirikija','30 krekera','200 gr čokolade'] 
     },
     {
         ime: 'Merlin snite',
         tezina: 'srednji',
-        sastojci: ['6 jaja','150 g šećera','30 g brašna','30 g kakaoa','1 kesica praška za pecivo','kašike gustina',
-        '1 kašika ulja'] 
+        sastojci: ['6 jaja','150 g šećera','30 g brašna','30 g kakaoa','1 kesica praška za pecivo'] 
     }
 ]
 
@@ -48,12 +45,9 @@ ispisRecepta(recept);
 Почетни или Лаки (не исписује остале)*/
 
 function tezina(objekat){
-    console.log('ispis samo onih recepata koji su po tezini u kategoriji: "lak" ili "pocetni"')
+    console.log('ispis samo onih recepata koji su po tezini u kategoriji: "lak" ili "pocetni"\n')
     objekat.forEach(element => {
         if(element.tezina === 'lak' || element.tezina === 'pocetni') {
-            //ako bih ovde pozvao funkciju ispisRecepta() kad god bi prosao if ispislai bi se svi elementi
-            //predpostavljam da bi to moglo da se resi tako sto bi se modifikovala sama metoda ispisRecepta(),
-            //da primi jos jedan parametar <Tezina> pa na osnovu njega da ispisuje
             console.log(` <${element.ime}>\n tezina: <${element.tezina}>\n sastojci: [${element.sastojci}]\n`);
         }
     })
@@ -67,38 +61,84 @@ tezina(recept);
 Име састојка
 Количина
 Цена
-sastojak1 = {
-    ...
-}
+*/
 
-sastojak2 = {
-    ...
-}*/
+class sastojak {
+    constructor(ime,kolicina,cena) {
+        this.ime = ime;
+        this.kolicina = kolicina;
+        this.cena = cena;
+    }
+}
+//palacinke
+let jaja1 = new sastojak('jaja',3, 14);
+let mleko1 = new sastojak('mleka', 250, 0.1);
+let brasno1 = new sastojak('brasna', 125, 0.085);
 
-let sastojak1 = {
-    ime: 'jaja',
-    kolicina: 25,
-    cena: 14
-}
-let sastojak2 = {
-    ime: 'secer',
-    kolicina: 3, //misli se na kg
-    cena: 86     //cena po kg
-}
-let sastojak3 = {
-    ime: 'brasno',
-    kolicina: 2, //misli se na kg
-    cena: 76     //cena po kg
-}
-let sastojak4 = {
-    ime: 'mleko',
-    kolicina: 4, // misli se na litre
-    cena: 126    //cena po litru
-}
-let sastojak5 = {
-    ime: 'ulje',
-    kolicina: 1, //misli se na litre
-    cena: 115    //cena po litru
-}
+//coko mus
+let avokado2 = new sastojak('avokada', 2, 130);
+let med2 = new sastojak('meda', 100, 0.8);
+let kakao2 = new sastojak('kakao-a', 40, 0.139);
+let mleko2 = new sastojak('mleka', 60, 0.1);
 
+//slatki zlaogaji
+let puter3 = new sastojak('putera od kikirikija', 120, 1.36);
+let kreker3 = new sastojak('krekera', 30, 3);
+let cokolada3 = new sastojak('cokolade', 200, 1);
 
+//merlin snite
+let jaja4 = new sastojak('jaja',6, 14);
+let secer4 = new sastojak('secera', 150, 0.7)
+let brasno4 = new sastojak('brasna', 30, 0.085);
+let kakao4 = new sastojak('kakao-a', 30, 0.139);
+let prasakZaPecivo4 = new sastojak('praska za pecivo', 1, 10);
+
+//4. Направити објекат из првог задатка, али уместо низа String-ова, направити низ објеката из трећег задатка
+
+let recept2 = [
+    {
+        ime: 'Palacinke',
+        tezina: 'lak',
+        sastojci: [jaja1, mleko1,brasno1]  
+    },
+    {
+        ime: 'Coko mus',
+        tezina: 'pocetni',
+        sastojci: [avokado2,med2,kakao2,mleko2]
+    },
+    {
+        ime: 'Slatki zalogaji',
+        tezina: 'tezak',
+        sastojci: [puter3,kreker3,cokolada3] 
+    },
+    {
+        ime: 'Merlin snite',
+        tezina: 'srednji',
+        sastojci: [jaja4,secer4,brasno4,kakao4,prasakZaPecivo4] 
+    }
+]
+
+/*5.zadatak
+Направити функцију која рачуна укупну цену рецепта (функција је везана за објекат (this))
+(За сваки састојак из рецепта одредити цену,па сабрати то (цена у самом објекту је написана за Количину 1,
+па укупну цену за један састојак рачунамо са количина*цена))*/
+//**********************************************************************/
+
+//Moglo je i da se napravi svaki pojedinacno recept - da bude objekat, pa da se prosledi samo ime recepta
+//i onda se izracuna njegova cena,(lakse je), al ja sam hteo da napravim kao katalog svih recepata, nadam se
+//da je to ok i vise sam hteo da proverim kako radi forEach u forEachu :D :D
+
+function cenaRecepta(objekat){
+    objekat.forEach(element => {
+        console.log(`---------------------${element.ime}----------------------\n`);
+        let sum2 = 0;
+        element.sastojci.forEach(element1 =>{
+            let sum = 0;
+            sum += element1.kolicina * element1.cena;
+            console.log(`-cena ${element1.ime} je ${sum.toFixed(2)} din`);
+            sum2 +=sum;
+        })
+        console.log(`\nUKUPNO: ${sum2.toFixed(2)} DIN\n`);
+    })
+}
+cenaRecepta(recept2);
