@@ -4,11 +4,14 @@ const addTaskButton = document.querySelector('#btn-add'); //dugme za submit,
 const taskListContainer = document.querySelector('#tasks-container'); //dodavanje taska, ceo div
 const removeSelected = document.querySelector('#remv-sel'); //dugme da se obrise sve selektovano
 const selectInverted = document.querySelector('#sel-invert');
+const urgency = document.querySelector('#dropdown');
 
 addTaskButton.addEventListener('click', btnAddClick); //doda se Event za submit dugme
 textBoxTitle.addEventListener('keyup', txtKeyUp);     //doda se Evenet za momenat kad se upisuje poruka
 removeSelected.addEventListener('click', remove); 
 selectInverted.addEventListener('click', inverted);
+
+
 
 //sta se desi kad se klikne submit dugme, funkcija se pozove u Eventu-u
 function btnAddClick() {
@@ -31,9 +34,23 @@ function addItem(){
         alert("Task title can not be empty!");
         return; 
     }
+    let priority = urgency.value;
+
+
     //kreiramo div
     let itemContainer = document.createElement("div");
     itemContainer.className = 'task-item';
+    if(priority == 'Low'){
+        itemContainer.style.backgroundColor = '#b3d1ff';
+    }
+    if(priority == 'Medium'){
+        itemContainer.style.backgroundColor = '#d2d22d';
+    }
+    if(priority == 'High'){
+        itemContainer.style.backgroundColor = '#cc3399';
+    }
+   
+    
     
     //kreiramo p
     let itemText = document.createElement('p');
@@ -93,6 +110,7 @@ function remove(){
     chkBox.forEach(element =>{
         if(element.checked) {
             element.parentElement.parentElement.remove();
+            
         }
     })
 }
@@ -102,11 +120,16 @@ function inverted(){
     chkBox.forEach(element =>{
         if(element.checked) {
             element.checked = false; 
+            element.parentElement.parentElement.children[0].style.textDecoration = 'none';
         }
         else {
             element.checked = true;
+            element.parentElement.parentElement.children[0].style.textDecoration = 'line-through';
+            
         }
     })
 }
+
+
 
 
