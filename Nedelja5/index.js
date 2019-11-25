@@ -8,14 +8,15 @@ titleMounth.innerHTML = monthNames[date.getMonth()];
 const addDesc = document.querySelector('.add__description');
 const addValue = document.querySelector('.add__value');
 const addBtn = document.querySelector('.ion-ios-checkmark-outline');
-
-const addType = document.querySelector('.add__type')
+const addType = document.querySelector('.add__type');
+const income = document.querySelector('.income');
+const expenses = document.querySelector('.expenses__list');
 
 var arrayIncome = [];
 var arrayExspenses = [];
 var ukupnoPrihodi = 0;
 var ukupnoRashodi = 0;
-
+var ukupno = 0;
 
 addValue.addEventListener('keyup', txtKeyUp);
 addBtn.addEventListener('click', btnAddClick);
@@ -75,14 +76,7 @@ function addItem() {
     //create i element
     let i = document.createElement('i');
     i.className = 'ion-ios-close-outline';
-
-    //TREBA DA NAPRAVIM jedan if da l je - ili + i po tome da ubacim u koju listu hocu
-    //I DA DODAM % AKO JE - LISTA
-
-    const income = document.querySelector('.income');
-
-    const expenses = document.querySelector('.expenses__list');
-    let ukupno = 0;
+    
     if (addType.value == '+') {
         btnDelete.appendChild(i);
         itemDel.appendChild(btnDelete);
@@ -92,7 +86,7 @@ function addItem() {
         clearFix.appendChild(rightClFx);
         income.appendChild(clearFix);
         //doda iznos u niz, da bi kasnije moglo da se prodje kroz niz i saberu sve vrednosti
-        arrayIncome.push(value1);
+        //arrayIncome.push(value1);
         ukupnoPrihodi += parseInt(value1);
     }
     else {
@@ -105,7 +99,7 @@ function addItem() {
         clearFix.appendChild(rightClFx);
         expenses.appendChild(clearFix);
         //doda iznos u niz, da bi kasnije moglo da se prodje kroz niz i saberu sve vrednosti
-        arrayExspenses.push(value1);
+        //arrayExspenses.push(value1);
         ukupnoRashodi += parseInt(value1);
    }
     let budget = document.querySelector('.budget__value');
@@ -119,27 +113,29 @@ function addItem() {
     budgetExpenses.innerHTML = ukupnoRashodi;
 
     function btnRem(e) {
-        let btnToRemove1 = e.target;
+        let btnToRemove1 = e.target; //btn
         let divToRemove = btnToRemove1.parentElement.parentElement.parentElement.parentElement;
-        divToRemove.remove();
-        //mora da se popraviiiiiiiiii!!!!!!!!!!!
-        if(addType.value == '+'){
+       
+       if(divToRemove.parentElement.className === 'income') {
             ukupno -= value1;
+            ukupnoPrihodi -= value1; 
             console.log('PRIHOOOOODI')
-            console.log(value1);
-            console.log(ukupno);
+            console.log(`ovu stavku brisemo ${value1}`);
+            console.log(`ukupno na racunu ${ukupno}`);
             budget.innerHTML = parseInt(ukupno);
-        }
-        if(addType.value == '-'){
+       }
+       else{
             ukupno += parseInt(value1);
+            ukupnoRashodi -= value1;
             console.log('rashodi ')
-            console.log(value1);
+            console.log(`ovu stavku brisemo ${value1}`);
+            console.log(`ukupno na racunu ${ukupno}`);
             budget.innerHTML = parseInt(ukupno);
         }
         
-            
+        divToRemove.remove();
+        
     }
-
     addDesc.value = '';
     addValue.value = '';
 }
