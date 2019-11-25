@@ -13,7 +13,7 @@ const income = document.querySelector('.income');
 const expenses = document.querySelector('.expenses__list');
 
 var arrayIncome = [];
-var arrayExspenses = [];
+var arrayExspenses = []; 
 var ukupnoPrihodi = 0;
 var ukupnoRashodi = 0;
 var ukupno = 0;
@@ -36,11 +36,11 @@ function addItem() {
     text = text.trim();
     if (text == '') return;
 
-    let value1 = parseInt(addValue.value);
+    let value1 = parseInt(addValue.value); 
     if (value1 == 0 || value1 < 0) return;
 
     //create wrapper
-    let clearFix = document.createElement('div'); //dodati di ako bude potrebno
+    let clearFix = document.createElement('div'); 
     clearFix.className = 'item clearfix';
 
     //create div description
@@ -85,8 +85,6 @@ function addItem() {
         clearFix.appendChild(itemDesc);
         clearFix.appendChild(rightClFx);
         income.appendChild(clearFix);
-        //doda iznos u niz, da bi kasnije moglo da se prodje kroz niz i saberu sve vrednosti
-        //arrayIncome.push(value1);
         ukupnoPrihodi += parseInt(value1);
     }
     else {
@@ -98,8 +96,7 @@ function addItem() {
         clearFix.appendChild(itemDesc);
         clearFix.appendChild(rightClFx);
         expenses.appendChild(clearFix);
-        //doda iznos u niz, da bi kasnije moglo da se prodje kroz niz i saberu sve vrednosti
-        //arrayExspenses.push(value1);
+ 
         ukupnoRashodi += parseInt(value1);
    }
     let budget = document.querySelector('.budget__value');
@@ -116,25 +113,19 @@ function addItem() {
         let btnToRemove1 = e.target; //btn
         let divToRemove = btnToRemove1.parentElement.parentElement.parentElement.parentElement;
        
-       if(divToRemove.parentElement.className === 'income') {
+       if(divToRemove.parentElement.className == 'income') {
             ukupno -= value1;
             ukupnoPrihodi -= value1; 
-            console.log('PRIHOOOOODI')
-            console.log(`ovu stavku brisemo ${value1}`);
-            console.log(`ukupno na racunu ${ukupno}`);
+            budgetIncome.innerHTML = ukupnoPrihodi;
             budget.innerHTML = parseInt(ukupno);
        }
        else{
             ukupno += parseInt(value1);
             ukupnoRashodi -= value1;
-            console.log('rashodi ')
-            console.log(`ovu stavku brisemo ${value1}`);
-            console.log(`ukupno na racunu ${ukupno}`);
+            budgetExpenses.innerHTML = ukupnoRashodi;
             budget.innerHTML = parseInt(ukupno);
-        }
-        
-        divToRemove.remove();
-        
+        }    
+        divToRemove.remove();      
     }
     addDesc.value = '';
     addValue.value = '';
